@@ -1,182 +1,186 @@
 import React from "react";
 import Card from "./Card";
 import "./App.css";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Container from '@mui/material/Container';
+import Typography from "@mui/material/Typography";
 
 function App() {
   let levelOne = [
-    "What was your first impression of me?",
-    "What do you think is the hardest part of what I do for a living",
-    "What reality show do you think I'm most likely to binge watch? explain.",
-    "Do I seem like a cat or dog person?",
-    "What do my shoes tell you about me?",
-    "Do I seem like more of a creative or analytical type? explain.",
-    "How many speeding tickets do you think I've gotten in my life?",
-    "Do I seem like someone who would get a name tattooed on myself?",
-    "What do you think I'm most likely to splurge on?",
-    "Finish the sentence: just by looking at you I'd think ____.",
-    "What character would I play in a movie?",
-    "Do I remind you of anyone?",
-    "Who do you think my celebrity crush is?",
-    "Do you think I've ever checked an ex's phone for evidence?",
-    "What's the first thing you noticed about me?",
-    "Do I seem like a coffee or tea person? Sweetened or unsweetened?",
-    "What do you think my go to karaoke song is?",
-    "If you were to buy me a present, knowing nothing about me other than what I look like, what would it be?",
-    "What does my phone wallpaper tell you about me?",
-    "Do I look kind? explain.",
-    "Do you think I fall in love easily? why or why not?",
-    "As a child, what do you think I wanted to be?",
-    "Do you think I'm usually early, on time, or late to events? explain.",
-    "What subject do you think I thrived in at school? Did I fail any?",
-    "What compliment do you think I hear the most?",
-    "Do I seem like a morning person or a night owl? why?",
-    "What fast food restaurant do you think I'm most likely to drive through? What's my order?",
-    "What is my body language telling you right now?",
-    "What does my instagram tell you about me?",
-    "Do you think plants thrive or die in my care? explain.",
-    "On a scale of 1-10, how messy do you think my car is? 1 being clean 10 complete disaster",
-    "Do you think I was popular in school? explain.",
-    "Do you think I've ever been fired from a job? If so, what for?",
-    "Do you think I intimidate others? why or why not?",
-    "How likely am I to go camping? how high maintenance is my set up?",
-    "What about me is most strange or unfamiliar to you?",
-    "If myspace were still a thing, what would my profile song be?",
-    "What about me intrigues you?",
-    "What does my style tell you about me?",
-    "Do you think I've ever had my heart broken?",
-    "Do you think I've been in love?",
-    "What is the worst assumption someone has made about you?",
+    "ΠΟΙΑ ΗΤΑΝ Η ΠΡΩΤΗ ΣΟΥ ΕΝΤΥΠΩΣΗ ΓΙΑ ΜΕΝΑ;",
+    "ΠΟΙΟ ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΕΙΝΑΙ ΤΟ ΠΙΟ ΔΥΣΚΟΛΟ ΜΕΡΟΣ ΤΗΣ ΔΟΥΛΕΙΑΣ ΜΟΥ",
+    "ΠΟΙΟ REALITY ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΕΙΝΑΙ ΠΙΟ ΠΙΘΑΝΟ ΝΑ ΠΑΡΑΚΟΛΟΥΘΗΣΩ ΣΕ ΤΗΛΕΟΠΤΙΚΟ ΜΑΡΑΘΩΝΙΟ; ΕΞΗΓΗΣΕ.",
+    "ΦΑΙΝΟΜΑΙ ΝΑ ΠΡΟΤΙΜΩ ΤΙΣ ΓΑΤΕΣ Η ΤΟΥΣ ΣΚΥΛΟΥΣ;",
+    "ΤΙ ΣΟΥ ΛΕΝΕ ΤΑ ΠΑΠΟΥΤΣΙΑ ΜΟΥ ΓΙΑ ΜΕΝΑ;",
+    "ΦΑΙΝΟΜΑΙ ΠΕΡΙΣΣΟΤΕΡΟ ΔΗΜΙΟΥΡΓΙΚΟΣ Η ΑΝΑΛΥΤΙΚΟΣ ΤΥΠΟΣ ΑΝΘΡΩΠΟΥ; ΕΞΗΓΗΣΕ.",
+    "ΠΟΣΕΣ ΚΛΗΣΕΙΣ ΓΙΑ ΥΠΕΡΒΟΛΙΚΗ ΤΑΧΥΤΗΤΑ ΝΟΜΙΖΕΙΣ ΟΤΙ ΕΧΩ ΠΑΡΕΙ ΣΤΗ ΖΩΗ ΜΟΥ;",
+    "ΜΟΙΑΖΩ ΜΕ ΚΑΠΟΙΟΝ ΠΟΥ ΘΑ ΕΚΑΝΕ ΤΑΤΟΥΑΖ ΕΝΑ ΟΝΟΜΑ ΠΑΝΩ ΤΟΥ;",
+    "ΣΕ ΤΙ ΝΟΜΙΖΕΙΣ ΟΤΙ ΕΙΝΑΙ ΠΙΟ ΠΙΘΑΝΟ ΝΑ ΣΠΑΤΑΛΗΣΩ ΧΡΗΜΑΤΑ;",
+    "ΟΛΟΚΛΗΡΩΣΕ ΤΗΝ ΠΡΟΤΑΣΗ: ΑΠΛΑ ΚΟΙΤΑΖΟΝΤΑΣ ΣΕ ΘΑ ΣΚΕΦΤΟΜΟΥΝ ____.",
+    "ΠΟΙΟΝ ΧΑΡΑΚΤΗΡΑ ΘΑ ΕΠΑΙΖΑ ΣΕ ΜΙΑ ΤΑΙΝΙΑ;",
+    "ΣΟΥ ΘΥΜΙΖΩ ΚΑΠΟΙΟΝ;",
+    "ΠΟΙΑ ΝΟΜΙΖΕΙΣ ΟΤΙ ΕΙΝΑΙ Η ΚΑΨΟΥΡΑ ΜΟΥ ΜΕ ΔΙΑΣΗΜΟ;",
+    "ΝΟΜΙΖΕΙΣ ΟΤΙ ΕΧΩ ΚΟΙΤΑΞΕΙ ΠΟΤΕ ΣΤΟ ΤΗΛΕΦΩΝΟ ΕΝΟΣ ΠΡΩΗΝ ΓΙΑ ΑΠΟΔΕΙΞΕΙΣ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΠΡΩΤΟ ΠΡΑΓΜΑ ΠΟΥ ΠΑΡΑΤΗΡΗΣΕΣ ΠΑΝΩ ΜΟΥ;",
+    "ΦΑΙΝΟΜΑΙ ΝΑ ΕΙΜΑΙ ΑΝΘΡΩΠΟΣ ΤΟΥ ΚΑΦΕ Η ΤΟΥ ΤΣΑΓΙΟΥ; ΤΟΥ ΓΛΥΚΟΥ Η ΤΟΥ ΠΙΚΡΟΥ;",
+    "ΠΟΙΟ ΝΟΜΙΖΕΙΣ ΟΤΙ ΕΙΝΑΙ ΤΟ ΑΓΑΠΗΜΕΝΟ ΜΟΥ ΤΡΑΓΟΥΔΙ ΓΙΑ ΚΑΡΑΟΚΕ;",
+    "ΑΝ ΜΟΥ ΑΓΟΡΑΖΕΣ ΕΝΑ ΔΩΡΟ, ΧΩΡΙΣ ΝΑ ΞΕΡΕΙΣ ΤΙΠΟΤΑ ΓΙΑ ΜΕΝΑ ΕΚΤΟΣ ΑΠΟ ΤΟ ΠΩΣ ΜΟΙΑΖΩ, ΠΟΙΟ ΘΑ ΗΤΑΝ ΑΥΤΟ;",
+    "ΤΙ ΣΟΥ ΛΕΕΙ Η ΤΑΠΕΤΣΑΡΙΑ ΤΟΥ ΚΙΝΗΤΟΥ ΜΟΥ ΓΙΑ ΜΕΝΑ;",
+    "ΦΑΙΝΟΜΑΙ ΕΥΓΕΝΙΚΟΣ; ΕΞΗΓΗΣΕ.",
+    "ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΕΡΩΤΕΥΟΜΑΙ ΕΥΚΟΛΑ; ΓΙΑΤΙ Η ΓΙΑΤΙ ΟΧΙ;",
+    "ΩΣ ΠΑΙΔΙ, ΤΙ ΝΟΜΙΖΕΙΣ ΟΤΙ ΗΘΕΛΑ ΝΑ ΓΙΝΩ;",
+    "ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΣΥΝΗΘΩΣ ΠΗΓΑΙΝΩ ΝΩΡΙΣ, ΣΤΗΝ ΩΡΑ ΜΟΥ Η ΑΡΓΩ ΣΤΙΣ ΕΚΔΗΛΩΣΕΙΣ; ΕΞΗΓΗΣΕ.",
+    "ΣΕ ΠΟΙΟ ΜΑΘΗΜΑ ΝΟΜΙΖΕΙΣ ΟΤΙ ΤΑ ΠΗΓΑΙΝΑ ΠΟΛΥ ΚΑΛΑ ΣΤΟ ΣΧΟΛΕΙΟ; ΜΗΠΩΣ ΑΠΕΤΥΧΑ ΣΕ ΚΑΠΟΙΟ;",
+    "ΠΟΙΟ ΚΟΜΠΛΙΜΕΝΤΟ ΝΟΜΙΖΕΙΣ ΟΤΙ ΑΚΟΥΩ ΠΙΟ ΣΥΧΝΑ;",
+    "ΣΟΥ ΦΑΙΝΟΜΑΙ ΠΡΩΙΝΟΣ ΤΥΠΟΣ Η ΝΥΧΤΟΠΟΥΛΙ; ΓΙΑΤΙ;",
+    "ΠΟΙΟ ΦΑΣΤΦΟΥΝΤΑΔΙΚΟ ΝΟΜΙΖΕΙΣ ΟΤΙ ΕΙΝΑΙ ΠΙΟ ΠΙΘΑΝΟ ΝΑ ΕΠΙΛΕΞΩ; ΠΟΙΑ ΕΙΝΑΙ Η ΠΑΡΑΓΓΕΛΙΑ ΜΟΥ;",
+    "ΤΙ ΣΟΥ ΛΕΕΙ Η ΓΛΩΣΣΑ ΤΟΥ ΣΩΜΑΤΟΣ ΜΟΥ ΑΥΤΗ ΤΗ ΣΤΙΓΜΗ;",
+    "ΤΙ ΣΟΥ ΛΕΕΙ ΤΟ INSTAGRAM ΜΟΥ ΓΙΑ ΜΕΝΑ;",
+    "ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΤΑ ΦΥΤΑ ΕΥΔΟΚΙΜΟΥΝ Η ΠΕΘΑΙΝΟΥΝ ΟΤΑΝ ΤΑ ΦΡΟΝΤΙΖΩ; ΕΞΗΓΗΣΕ ΜΟΥ",
+    "ΣΕ ΜΙΑ ΚΛΙΜΑΚΑ ΑΠΟ ΤΟ 1-10, ΠΟΣΟ ΑΚΑΤΑΣΤΑΤΟ ΝΟΜΙΖΕΙΣ ΟΤΙ ΕΙΝΑΙ ΤΟ ΑΥΤΟΚΙΝΗΤΟ ΜΟΥ; ΤΟ 1 ΣΗΜΑΙΝΕΙ ΚΑΘΟΛΟΥ, ΤΟ 10 ΑΠΟΛΥΤΗ ΚΑΤΑΣΤΡΟΦΗ",
+    "ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΗΜΟΥΝ ΔΗΜΟΦΙΛΗΣ ΣΤΟ ΣΧΟΛΕΙΟ; ΕΞΗΓΗΣΕ.",
+    "ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΕΧΩ ΑΠΟΛΥΘΕΙ ΠΟΤΕ ΑΠΟ ΜΙΑ ΔΟΥΛΕΙΑ; ΑΝ ΝΑΙ, ΓΙΑ ΠΟΙΟ ΛΟΓΟ;",
+    "ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΕΚΦΟΒΙΖΩ ΤΟΥΣ ΑΛΛΟΥΣ; ΓΙΑΤΙ Η ΓΙΑΤΙ ΟΧΙ;",
+    "ΠΟΣΟ ΠΙΘΑΝΟ ΕΙΝΑΙ ΝΑ ΠΑΩ ΓΙΑ ΚΑΜΠΙΝΓΚ; ΠΟΣΟ ΑΠΑΙΤΗΤΙΚΟ ΕΙΝΑΙ ΤΟ ΓΟΥΣΤΟ ΜΟΥ;",
+    "ΤΙ ΕΙΝΑΙ ΤΟ ΠΙΟ ΠΑΡΑΞΕΝΟ Η ΤΟ ΛΙΓΟΤΕΡΟ ΟΙΚΕΙΟ ΓΙΑ ΕΣΕΝΑ ΠΑΝΩ ΜΟΥ;",
+    "ΑΝ ΤΟ MYSPACE ΥΠΗΡΧΕ ΑΚΟΜΑ, ΠΟΙΟ ΘΑ ΗΤΑΝ ΤΟ ΤΡΑΓΟΥΔΙ ΤΟΥ ΠΡΟΦΙΛ ΜΟΥ;",
+    "ΤΙ ΣΕ ΙΝΤΡΙΓΚΑΡΕΙ ΠΑΝΩ ΜΟΥ;",
+    "ΤΙ ΣΟΥ ΛΕΕΙ ΤΟ ΣΤΥΛ ΜΟΥ ΓΙΑ ΜΕΝΑ;",
+    "ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΜΟΥ ΕΧΟΥΝ ΡΑΓΙΣΕΙ ΠΟΤΕ ΤΗΝ ΚΑΡΔΙΑ;",
+    "ΝΟΜΙΖΕΙΣ ΟΤΙ ΕΧΩ ΕΡΩΤΕΥΤΕΙ;",
+    "ΠΟΙΑ ΕΙΝΑΙ Η ΧΕΙΡΟΤΕΡΗ ΕΙΚΑΣΙΑ ΠΟΥ ΕΧΕΙ ΚΑΝΕΙ ΚΑΠΟΙΟΣ ΓΙΑ ΣΕΝΑ;",
   ];
 
   let levelTwo = [
-    "What is your defining characteristic?",
-    "What's the most pain you've ever been in that wasn't physical?",
-    "How are you, really?",
-    "What is the last thing your mom has lied to you about?",
-    "What's your father's name and one thing about him?",
-    "What have I tolerated from people in the past that I no longer have space for?",
-    "Something that brought a smile to my face this week was ___.",
-    "What are you feeling a lot of lately?",
-    "What do you need right now but aren't communicating?",
-    "What are you currently working through that others don't see?",
-    "What was the biggest turning point in your dating life?",
-    "What is your heart telling you?",
-    "What is your most toxic trait you can admit to?",
-    "Who in your life deserves the biggest thank you? Let them know if you can.",
-    "What are you overthinking right now?",
-    "What did you last relationship teach you about yourself?",
-    "What belief about yourself no longer serves you?",
-    "What do you need to forgive yourself for?",
-    "What's the hardest lesson you've learned in love?",
-    "You hurt me, but thank you for ___.",
-    "Who in your life can you be your most vulnerable with?",
-    "Which one of your parent's personality traits do you want to keep/let go of?",
-    "Dear younger self: ____.",
-    "Think of someone you admire. Why did this person come to mind?",
-    "Are you lying to yourself about anything?",
-    "What's your favorite part of yourself that isn't physical?",
-    "What's the hardest part about dating you?",
-    "I feel loved when ___.",
-    "What is something you've learned about yourself this week?",
-    "Self love is ___.",
-    "What was the lesson in your most recent painful experience?",
-    "I know I'm in love when ___.",
-    "What's your favorite song lyric you can think of off the top of your head?",
-    "How did you get over your first love?",
-    "What's the best lesson an ex has ever taught you?",
-    "Is there anyone who's changed your life but doesn't know it?",
-    "What do you need right now, more than anything?",
-    "When was the last time you felt lucky to be you?",
-    "What do you need to accept today?",
-    "When was the last time you felt most yourself?",
-    "What's your mother's name and the most valuable lesson she's taught you thus far?",
-    "What are you most grateful for in this current moment?",
-    "What are you still trying to prove to yourself?",
-    "What have you been taking for granted lately?",
-    "Is there a feeling you miss?",
-    "What would your younger self not believe about your life today?",
-    "If you could have it your way: Who would you be with? Where would you be? And what would you be doing?",
-    "What do you need to hear right now?",
-    "What title would you give this chapter in your life?",
-    "What dating advice would you give your younger self?",
-    "What lesson should you have learned by now?",
-    "When was the last time you were able to use your pain to help someone else?",
-    "What would you never want to change about yourself?",
-    "What question did this year leave you with?",
-    "What about yourself is hardest to admit?",
-    "What question are you trying to answer most in your life right now?",
-    "Finish the sentences: strangers would describe me as _____. Only I know that I am ______",
-    "When you're asked how are you, how often do you answer truthfully?",
-    "Has a stranger ever changed your life?",
-    "What is the most unexplainable thing that's ever happened to you?",
-    "Describe your perfect day!",
-    "Have you changed your mind about anything recently?",
-    "What's been the best compliment a stranger has ever given you?",
-    "What is a compliment you wish you received more frequently?",
-    "What do you crave more of?",
-    "What has been your earliest recollection of happiness?",
-    "What are you more afraid of, failure or success? And why?",
-    "How would you describe the feeling of being in love in one word?",
-    "When was the last time you surprised yourself?",
-    "What's been your happiest memory this past year?",
-    "Do you think the image you have of yourself matches the image people see you as?",
-    "If you have, when was the moment you realized you weren't invincible?",
-    "What lesson took you the longest to unlearn?",
-    "What part of your life works? What part of your life hurts?",
-    "What is your 1st love's name and the reason you fell in love with him/her?",
-    "What's your mother's name? And the most beautiful thing about her?",
-    "If you could get to know someone in your life on a deeper level, who would it be and why?",
-    "Are you missing anyone right now? Do you think they are missing you too?",
-    "What is a dream you've let go of?",
-    "What is the last thing you lied to your mother about?",
-    "Have you ever told someone I love you but didn't mean it? if so, why?",
-    "How can you become a better person?",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΧΑΡΑΚΤΗΡΙΣΤΙΚΟ ΠΟΥ ΣΕ ΧΑΡΑΚΤΗΡΙΖΕΙ;",
+    "ΠΟΙΟΣ ΕΙΝΑΙ Ο ΜΕΓΑΛΥΤΕΡΟΣ ΠΟΝΟΣ ΠΟΥ ΕΧΕΙΣ ΥΠΟΣΤΕΙ ΠΟΤΕ ΚΑΙ ΔΕΝ ΗΤΑΝ ΣΩΜΑΤΙΚΟΣ;",
+    "ΠΩΣ ΕΙΣΑΙ ΣΤ' ΑΛΗΘΕΙΑ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΤΕΛΕΥΤΑΙΟ ΠΡΑΓΜΑ ΓΙΑ ΤΟ ΟΠΟΙΟ ΣΟΥ ΕΙΠΕ ΨΕΜΑΤΑ Η ΜΑΜΑ ΣΟΥ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΟΝΟΜΑ ΤΟΥ ΠΑΤΕΡΑ ΣΟΥ ΚΑΙ ΕΝΑ ΠΡΑΓΜΑ ΣΧΕΤΙΚΑ Μ' ΑΥΤΟΝ;",
+    "ΤΙ ΕΧΩ ΑΝΕΧΤΕΙ ΑΠΟ ΑΝΘΡΩΠΟΥΣ ΣΤΟ ΠΑΡΕΛΘΟΝ ΤΟ ΟΠΟΙΟ ΔΕΝ ΜΠΟΡΩ ΝΑ ΑΝΕΧΤΩ ΠΛΕΟΝ;",
+    "ΚΑΤΙ ΠΟΥ ΕΦΕΡΕ ΕΝΑ ΧΑΜΟΓΕΛΟ ΣΤΟ ΠΡΟΣΩΠΟ ΜΟΥ ΑΥΤΗ ΤΗΝ ΕΒΔΟΜΑΔΑ ΗΤΑΝ ___.",
+    "ΤΙ ΑΙΣΘΑΝΕΣΑΙ ΠΟΛΥ ΤΟΝ ΤΕΛΕΥΤΑΙΟ ΚΑΙΡΟ;",
+    "ΤΙ ΧΡΕΙΑΖΕΣΑΙ ΑΥΤΗ ΤΗ ΣΤΙΓΜΗ ΑΛΛΑ ΔΕΝ ΤΟ ΕΠΙΚΟΙΝΩΝΕΙΣ;",
+    "ΤΙ ΕΙΝΑΙ ΑΥΤΟ ΠΟΥ ΔΟΥΛΕΥΕΙΣ ΑΥΤΗ ΤΗ ΣΤΙΓΜΗ ΚΑΙ ΟΙ ΑΛΛΟΙ ΔΕΝ ΤΟ ΒΛΕΠΟΥΝ;",
+    "ΠΟΙΟ ΗΤΑΝ ΤΟ ΣΗΜΑΝΤΙΚΟΤΕΡΟ ΣΗΜΕΙΟ ΚΑΜΠΗΣ ΣΤΗ ΖΩΗ ΣΟΥ ΣΧΕΤΙΚΑ ΜΕ ΤΑ ΡΑΝΤΕΒΟΥ;",
+    "ΤΙ ΣΟΥ ΛΕΕΙ Η ΚΑΡΔΙΑ ΣΟΥ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΠΙΟ ΤΟΞΙΚΟ ΧΑΡΑΚΤΗΡΙΣΤΙΚΟ ΣΟΥ ΠΟΥ ΜΠΟΡΕΙΣ ΝΑ ΠΑΡΑΔΕΧΤΕΙΣ;",
+    "ΠΟΙΟΣ ΣΤΗ ΖΩΗ ΣΟΥ ΑΞΙΖΕΙ ΤΟ ΜΕΓΑΛΥΤΕΡΟ ΕΥΧΑΡΙΣΤΩ; ΕΝΗΜΕΡΩΣΕ ΤΟΝ ΑΝ ΜΠΟΡΕΙΣ.",
+    "ΤΙ ΠΑΡΑΣΚΕΦΤΕΣΑΙ ΑΥΤΗ ΤΗ ΣΤΙΓΜΗ;",
+    "ΤΙ ΣΕ ΔΙΔΑΞΕ Η ΤΕΛΕΥΤΑΙΑ ΣΟΥ ΣΧΕΣΗ ΓΙΑ ΤΟΝ ΕΑΥΤΟ ΣΟΥ;",
+    "ΠΟΙΑ ΠΕΠΟΙΘΗΣΗ ΓΙΑ ΤΟΝ ΕΑΥΤΟ ΣΟΥ ΔΕΝ ΣΟΥ ΧΡΗΣΙΜΕΥΕΙ ΠΛΕΟΝ;",
+    "ΤΙ ΠΡΕΠΕΙ ΝΑ ΣΥΓΧΩΡΕΣΕΙΣ ΣΤΟΝ ΕΑΥΤΟ ΣΟΥ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΠΙΟ ΔΥΣΚΟΛΟ ΜΑΘΗΜΑ ΠΟΥ ΠΗΡΕΣ ΣΤΟΝ ΕΡΩΤΑ;",
+    "ΜΕ ΠΛΗΓΩΣΕΣ, ΑΛΛΑ ΣΕ ΕΥΧΑΡΙΣΤΩ ΓΙΑ ___.",
+    "ΜΕ ΠΟΙΟΝ ΣΤΗ ΖΩΗ ΣΟΥ ΜΠΟΡΕΙΣ ΝΑ ΕΙΣΑΙ ΠΕΡΙΣΣΟΤΕΡΟ ΕΥΑΛΩΤΟΣ;",
+    "ΠΟΙΟ ΑΠΟ ΤΑ ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ ΤΗΣ ΠΡΟΣΩΠΙΚΟΤΗΤΑΣ ΤΩΝ ΓΟΝΙΩΝ ΣΟΥ ΘΕΛΕΙΣ ΝΑ ΚΡΑΤΗΣΕΙΣ/ΑΦΗΣΕΙΣ",
+    "ΑΓΑΠΗΤΕ ΝΕΩΤΕΡΕ ΜΟΥ ΕΑΥΤΕ: ____.",
+    "ΣΚΕΨΟΥ ΚΑΠΟΙΟΝ ΠΟΥ ΘΑΥΜΑΖΕΙΣ. ΓΙΑΤΙ ΣΟΥ ΗΡΘΕ ΣΤΟ ΜΥΑΛΟ ΑΥΤΟ ΤΟ ΠΡΟΣΩΠΟ;",
+    "ΛΕΣ ΨΕΜΑΤΑ ΣΤΟΝ ΕΑΥΤΟ ΣΟΥ ΓΙΑ ΚΑΤΙ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΑΓΑΠΗΜΕΝΟ ΜΕΡΟΣ ΤΟΥ ΕΑΥΤΟΥ ΣΟΥ ΠΟΥ ΔΕΝ ΕΙΝΑΙ ΣΩΜΑΤΙΚΟ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΠΙΟ ΔΥΣΚΟΛΟ ΠΡΑΓΜΑ ΤΟΥ ΝΑ ΒΓΑΙΝΕΙΣ ΡΑΝΤΕΒΟΥ ΜΑΖΙ ΣΟΥ;",
+    "ΑΙΣΘΑΝΟΜΑΙ ΟΤΙ ΜΕ ΑΓΑΠΟΥΝ ΟΤΑΝ ___.",
+    "ΤΙ ΕΙΝΑΙ ΚΑΤΙ ΠΟΥ ΕΜΑΘΕΣ ΓΙΑ ΤΟΝ ΕΑΥΤΟ ΣΟΥ ΑΥΤΗ ΤΗΝ ΕΒΔΟΜΑΔΑ;",
+    "Η ΑΥΤΟΑΓΑΠΗ ΕΙΝΑΙ ___.",
+    "ΠΟΙΟ ΗΤΑΝ ΤΟ ΜΑΘΗΜΑ ΣΤΗΝ ΠΙΟ ΠΡΟΣΦΑΤΗ ΕΠΩΔΥΝΗ ΕΜΠΕΙΡΙΑ ΣΟΥ;",
+    "ΞΕΡΩ ΟΤΙ ΕΙΜΑΙ ΕΡΩΤΕΥΜΕΝΟΣ ΟΤΑΝ ___.",
+    "ΠΟΙΟΣ ΕΙΝΑΙ Ο ΑΓΑΠΗΜΕΝΟΣ ΣΤΙΧΟΣ ΤΡΑΓΟΥΔΙΟΥ ΠΟΥ ΣΟΥ ΕΡΧΕΤΑΙ ΑΠΑΥΘΕΙΑΣ ΣΤΟ ΜΥΑΛΟ;",
+    "ΠΩΣ ΞΕΠΕΡΑΣΕΣ ΤΟΝ ΠΡΩΤΟ ΣΟΥ ΕΡΩΤΑ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΚΑΛΥΤΕΡΟ ΜΑΘΗΜΑ ΠΟΥ ΣΟΥ ΕΔΩΣΕ ΠΟΤΕ ΕΝΑΣ ΠΡΩΗΝ;",
+    "ΥΠΑΡΧΕΙ ΚΑΠΟΙΟΣ ΠΟΥ ΣΟΥ ΕΧΕΙ ΑΛΛΑΞΕΙ ΤΗ ΖΩΗ ΑΛΛΑ ΔΕΝ ΤΟ ΞΕΡΕΙ;",
+    "ΤΙ ΧΡΕΙΑΖΕΣΑΙ ΑΥΤΗ ΤΗ ΣΤΙΓΜΗ ΠΕΡΙΣΣΟΤΕΡΟ ΑΠΟ ΟΤΙΔΗΠΟΤΕ ΑΛΛΟ;",
+    "ΠΟΤΕ ΗΤΑΝ Η ΤΕΛΕΥΤΑΙΑ ΦΟΡΑ ΠΟΥ ΑΙΣΘΑΝΘΗΚΕΣ ΤΥΧΕΡΟΣ ΠΟΥ ΕΙΣΑΙ Ο ΕΑΥΤΟΣ ΣΟΥ;",
+    "ΤΙ ΠΡΕΠΕΙ ΝΑ ΑΠΟΔΕΧΤΕΙΣ ΣΗΜΕΡΑ;",
+    "ΠΟΤΕ ΗΤΑΝ Η ΤΕΛΕΥΤΑΙΑ ΦΟΡΑ ΠΟΥ ΑΙΣΘΑΝΘΗΚΕΣ ΠΕΡΙΣΣΟΤΕΡΟ Ο ΕΑΥΤΟΣ ΣΟΥ;",
+    "ΠΩΣ ΛΕΓΕΤΑΙ Η ΜΗΤΕΡΑ ΣΟΥ ΚΑΙ ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΠΙΟ ΠΟΛΥΤΙΜΟ ΜΑΘΗΜΑ ΠΟΥ ΣΟΥ ΕΧΕΙ ΔΙΔΑΞΕΙ ΜΕΧΡΙ ΤΩΡΑ;",
+    "ΓΙΑ ΠΟΙΟ ΠΡΑΓΜΑ ΕΙΣΑΙ ΠΕΡΙΣΣΟΤΕΡΟ ΕΥΓΝΩΜΩΝ ΑΥΤΗ ΤΗ ΣΤΙΓΜΗ;",
+    "ΤΙ ΠΡΟΣΠΑΘΕΙΣ ΑΚΟΜΑ ΝΑ ΑΠΟΔΕΙΞΕΙΣ ΣΤΟΝ ΕΑΥΤΟ ΣΟΥ;",
+    "ΤΙ ΘΕΩΡΕΙΣ ΔΕΔΟΜΕΝΟ ΤΟΝ ΤΕΛΕΥΤΑΙΟ ΚΑΙΡΟ;",
+    "ΥΠΑΡΧΕΙ ΚΑΠΟΙΟ ΣΥΝΑΙΣΘΗΜΑ ΠΟΥ ΣΟΥ ΛΕΙΠΕΙ;",
+    "ΤΙ ΔΕΝ ΘΑ ΠΙΣΤΕΥΕ Ο ΝΕΟΤΕΡΟΣ ΕΑΥΤΟΣ ΣΟΥ ΓΙΑ ΤΗ ΖΩΗ ΣΟΥ ΣΗΜΕΡΑ;",
+    "ΑΝ ΜΠΟΡΟΥΣΕΣ ΝΑ ΤΟ ΚΑΝΕΙΣ ΟΠΩΣ ΕΣΥ ΘΕΛΕΙΣ: ΜΕ ΠΟΙΟΝ ΘΑ ΗΣΟΥΝ; ΠΟΥ ΘΑ ΗΣΑΣΤΑΝ; ΚΑΙ ΤΙ ΘΑ ΚΑΝΑΤΕ;",
+    "ΤΙ ΕΧΕΙΣ ΑΝΑΓΚΗ ΝΑ ΑΚΟΥΣΕΙΣ ΑΥΤΗ ΤΗ ΣΤΙΓΜΗ;",
+    "ΠΟΙΟΝ ΤΙΤΛΟ ΘΑ ΕΔΙΝΕΣ ΣΕ ΑΥΤΟ ΤΟ ΚΕΦΑΛΑΙΟ ΤΗΣ ΖΩΗΣ ΣΟΥ;",
+    "ΠΟΙΑ ΣΥΜΒΟΥΛΗ ΓΙΑ ΡΑΝΤΕΒΟΥ ΘΑ ΕΔΙΝΕΣ ΣΤΟΝ ΝΕΟΤΕΡΟ ΕΑΥΤΟ ΣΟΥ;",
+    "ΠΟΙΟ ΜΑΘΗΜΑ ΘΑ ΕΠΡΕΠΕ ΝΑ ΕΙΧΕΣ ΠΑΡΕΙ ΜΕΧΡΙ ΤΩΡΑ;",
+    "ΠΟΤΕ ΗΤΑΝ Η ΤΕΛΕΥΤΑΙΑ ΦΟΡΑ ΠΟΥ ΜΠΟΡΕΣΕΣ ΝΑ ΧΡΗΣΙΜΟΠΟΙΗΣΕΙΣ ΤΟΝ ΠΟΝΟ ΣΟΥ ΓΙΑ ΝΑ ΒΟΗΘΗΣΕΙΣ ΚΑΠΟΙΟΝ ΑΛΛΟ;",
+    "ΤΙ ΔΕΝ ΘΑ ΗΘΕΛΕΣ ΠΟΤΕ ΝΑ ΑΛΛΑΞΕΙΣ ΣΤΟΝ ΕΑΥΤΟ ΣΟΥ;",
+    "ΜΕ ΠΟΙΑ ΑΠΟΡΙΑ ΣΕ ΑΦΗΣΕ ΑΥΤΗ Η ΧΡΟΝΙΑ;",
+    "ΤΙ ΕΙΝΑΙ ΠΙΟ ΔΥΣΚΟΛΟ ΝΑ ΠΑΡΑΔΕΧΤΕΙΣ ΓΙΑ ΤΟΝ ΕΑΥΤΟ ΣΟΥ;",
+    "ΠΟΙΟ ΕΡΩΤΗΜΑ ΠΡΟΣΠΑΘΕΙΣ ΝΑ ΑΠΑΝΤΗΣΕΙΣ ΠΕΡΙΣΣΟΤΕΡΟ ΣΤΗ ΖΩΗ ΣΟΥ ΑΥΤΗ ΤΗ ΣΤΙΓΜΗ;",
+    "ΟΛΟΚΛΗΡΩΣΕ ΤΙΣ ΠΡΟΤΑΣΕΙΣ: ΟΙ ΑΓΝΩΣΤΟΙ ΘΑ ΜΕ ΠΕΡΙΕΓΡΑΦΑΝ ΩΣ _____. ΜΟΝΟ ΕΓΩ ΞΕΡΩ ΟΤΙ ΕΙΜΑΙ ______",
+    "ΟΤΑΝ ΣΕ ΡΩΤΟΥΝ ΠΩΣ ΕΙΣΑΙ, ΠΟΣΟ ΣΥΧΝΑ ΑΠΑΝΤΑΣ ΜΕ ΕΙΛΙΚΡΙΝΕΙΑ;",
+    "ΕΧΕΙ ΑΛΛΑΞΕΙ ΠΟΤΕ ΕΝΑΣ ΞΕΝΟΣ ΤΗ ΖΩΗ ΣΟΥ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΠΙΟ ΑΝΕΞΗΓΗΤΟ ΠΡΑΓΜΑ ΠΟΥ ΣΟΥ ΕΧΕΙ ΣΥΜΒΕΙ ΠΟΤΕ;",
+    "ΠΕΡΙΕΓΡΑΨΕ ΤΗΝ ΤΕΛΕΙΑ ΜΕΡΑ ΣΟΥ!",
+    "ΕΧΕΙΣ ΑΛΛΑΞΕΙ ΓΝΩΜΗ ΓΙΑ ΚΑΤΙ ΠΡΟΣΦΑΤΑ;",
+    "ΠΟΙΟ ΗΤΑΝ ΤΟ ΚΑΛΥΤΕΡΟ ΚΟΜΠΛΙΜΕΝΤΟ ΠΟΥ ΣΟΥ ΕΧΕΙ ΚΑΝΕΙ ΠΟΤΕ ΕΝΑΣ ΞΕΝΟΣ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΕΝΑ ΚΟΜΠΛΙΜΕΝΤΟ ΠΟΥ ΘΑ ΗΘΕΛΕΣ ΝΑ ΛΑΜΒΑΝΕΙΣ ΠΙΟ ΣΥΧΝΑ;",
+    "ΤΙ ΕΙΝΑΙ ΑΥΤΟ ΠΟΥ ΕΠΙΘΥΜΕΙΣ ΠΕΡΙΣΣΟΤΕΡΟ;",
+    "ΠΟΙΑ ΗΤΑΝ Η ΠΡΩΤΗ ΣΟΥ ΑΝΑΜΝΗΣΗ ΕΥΤΥΧΙΑΣ;",
+    "ΤΙ ΦΟΒΑΣΑΙ ΠΕΡΙΣΣΟΤΕΡΟ, ΤΗΝ ΑΠΟΤΥΧΙΑ Η ΤΗΝ ΕΠΙΤΥΧΙΑ; ΚΑΙ ΓΙΑΤΙ;",
+    "ΠΩΣ ΘΑ ΠΕΡΙΕΓΡΑΦΕΣ ΜΕ ΜΙΑ ΛΕΞΗ ΤΟ ΣΥΝΑΙΣΘΗΜΑ ΤΟΥ ΝΑ ΕΙΣΑΙ ΕΡΩΤΕΥΜΕΝΟΣ;",
+    "ΠΟΤΕ ΗΤΑΝ Η ΤΕΛΕΥΤΑΙΑ ΦΟΡΑ ΠΟΥ ΕΞΕΠΛΗΞΕΣ ΤΟΝ ΕΑΥΤΟ ΣΟΥ;",
+    "ΠΟΙΑ ΗΤΑΝ Η ΠΙΟ ΕΥΤΥΧΙΣΜΕΝΗ ΣΟΥ ΑΝΑΜΝΗΣΗ ΤΟΝ ΤΕΛΕΥΤΑΙΟ ΧΡΟΝΟ;",
+    "ΠΙΣΤΕΥΕΙΣ ΟΤΙ Η ΕΙΚΟΝΑ ΠΟΥ ΕΧΕΙΣ ΓΙΑ ΤΟΝ ΕΑΥΤΟ ΣΟΥ ΤΑΙΡΙΑΖΕΙ ΜΕ ΤΗΝ ΕΙΚΟΝΑ ΠΟΥ ΒΛΕΠΟΥΝ ΟΙ ΑΛΛΟΙ ΣΕ ΣΕΝΑ;",
+    "ΑΝ ΝΑΙ, ΠΟΤΕ ΗΤΑΝ Η ΣΤΙΓΜΗ ΠΟΥ ΣΥΝΕΙΔΗΤΟΠΟΙΗΣΕΣ ΟΤΙ ΔΕΝ ΕΙΣΑΙ ΑΝΙΚΗΤΟΣ;",
+    "ΠΟΙΟ ΜΑΘΗΜΑ ΣΟΥ ΠΗΡΕ ΠΕΡΙΣΣΟΤΕΡΟ ΧΡΟΝΟ ΓΙΑ ΝΑ ΤΟ ΞΕΜΑΘΕΙΣ;",
+    "ΠΟΙΟ ΜΕΡΟΣ ΤΗΣ ΖΩΗΣ ΣΟΥ ΛΕΙΤΟΥΡΓΕΙ; ΠΟΙΟ ΜΕΡΟΣ ΤΗΣ ΖΩΗΣ ΣΟΥ ΠΟΝΑΕΙ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΟΝΟΜΑ ΤΟΥ ΠΡΩΤΟΥ ΕΡΩΤΑ ΣΟΥ ΚΑΙ Ο ΛΟΓΟΣ ΠΟΥ ΤΟΝ/ΤΗΝ ΕΡΩΤΕΥΤΗΚΕΣ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΟΝΟΜΑ ΤΗΣ ΜΗΤΕΡΑΣ ΣΟΥ ΚΑΙ ΤΟ ΠΙΟ ΟΜΟΡΦΟ ΠΡΑΓΜΑ ΣΕ ΑΥΤΗΝ;",
+    "ΑΝ ΜΠΟΡΟΥΣΕΣ ΝΑ ΓΝΩΡΙΣΕΙΣ ΚΑΠΟΙΟΝ ΣΤΗ ΖΩΗ ΣΟΥ ΣΕ ΒΑΘΥΤΕΡΟ ΕΠΙΠΕΔΟ, ΠΟΙΟΣ ΘΑ ΗΤΑΝ ΑΥΤΟΣ ΚΑΙ ΓΙΑΤΙ;",
+    "ΣΟΥ ΛΕΙΠΕΙ ΚΑΠΟΙΟΣ ΑΥΤΗ ΤΗ ΣΤΙΓΜΗ; ΝΟΜΙΖΕΙΣ ΟΤΙ ΤΟΥ ΛΕΙΠΕΙΣ ΚΙ ΕΣΥ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΕΝΑ ΟΝΕΙΡΟ ΠΟΥ ΕΧΕΙΣ ΑΦΗΣΕΙ ΠΙΣΩ ΣΟΥ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΤΕΛΕΥΤΑΙΟ ΠΡΑΓΜΑ ΓΙΑ ΤΟ ΟΠΟΙΟ ΕΙΠΕΣ ΨΕΜΑΤΑ ΣΤΗ ΜΗΤΕΡΑ ΣΟΥ;",
+    "ΕΧΕΙΣ ΠΕΙ ΠΟΤΕ ΣΕ ΚΑΠΟΙΟΝ ΟΤΙ ΣΕ ΑΓΑΠΩ ΑΛΛΑ ΔΕΝ ΤΟ ΕΝΝΟΟΥΣΕΣ; ΑΝ ΝΑΙ, ΓΙΑΤΙ;",
+    "ΠΩΣ ΜΠΟΡΕΙΣ ΝΑ ΓΙΝΕΙΣ ΚΑΛΥΤΕΡΟΣ ΑΝΘΡΩΠΟΣ;",
   ];
 
   let levelThree = [
-    "What can I help you with?",
-    "Why do you think we met?",
-    "What about me surprised you?",
-    "In a word, how would you describe our conversation?",
-    "What do you think my strength is?",
-    "What can I teach you?",
-    "Based on what you've learned about me, do you have any Netflix recommendations?",
-    "Who do I remind you of?",
-    "What can you be kinder towards yourself for today?",
-    "What's one small thing you can do to be a better person in 2019?",
-    "What can we create together?",
-    "How would you describe me to a stranger?",
-    "What about me most surprised you?",
-    "What would be the perfect gift for me?",
-    "What do you admire most about me?",
-    "Based on what you learned about me, what book would you recommend I read?",
-    "What about me is hardest for you to understand?",
-    "What am I most qualified to give advice about?",
-    "What is one thing you think I can do that would dramatically improve my life?",
-    "If we were in a band, what would our name be?",
-    "Based on what you learned about me, does my social media accurately reflect who I am? Why or why not?",
-    "What do I need to hear right now?",
-    "Based on what you know about me, do you have any netflix recommendations?",
-    "What do you think my superpower is?",
-    "What is a lesson you will take away from our conversation?",
-    "When in this game did you feel most connected to me?",
-    "How does one earn your vulnerability? Have I earned it? How can I earn more?",
-    "What do you think our most important similarity is?",
-    "In one word, how would you describe our conversation?",
-    "What answer of mine made you light up?",
-    "When this game is over, what will you remember about me?",
-    "What question were you most afraid to answer?",
-    "What parts of yourself do you see in me?",
-    "How do our personalities complement each other?",
-    "What do you think my weakness is?",
-    "What would make you feel closer to me?",
-    "What do you think I fear the most?",
-    "What has this conversation taught you about yourself?",
-    "What do you think I should know about myself that perhaps I'm unaware of?",
-    "What do you think my defining characterisitic is?",
-    "Do you believe everyone has a calling? If so, do you think I've found mine?",
-    "What do you recommend I let go of, if anything?",
-    "In one word, describe how you feel right now",
+    "ΣΕ ΤΙ ΜΠΟΡΩ ΝΑ ΣΕ ΒΟΗΘΗΣΩ;",
+    "ΓΙΑΤΙ ΝΟΜΙΖΕΙΣ ΟΤΙ ΓΝΩΡΙΣΤΗΚΑΜΕ;",
+    "ΤΙ ΣΕ ΕΞΕΠΛΗΞΕ ΣΕ ΜΕΝΑ;",
+    "ΜΕ ΜΙΑ ΛΕΞΗ, ΠΩΣ ΘΑ ΠΕΡΙΕΓΡΑΦΕΣ ΤΗ ΣΥΖΗΤΗΣΗ ΜΑΣ;",
+    "ΠΟΙΑ ΝΟΜΙΖΕΙΣ ΟΤΙ ΕΙΝΑΙ Η ΔΥΝΑΜΗ ΜΟΥ;",
+    "ΤΙ ΜΠΟΡΩ ΝΑ ΣΟΥ ΔΙΔΑΞΩ;",
+    "ΜΕ ΒΑΣΗ ΑΥΤΑ ΠΟΥ ΕΜΑΘΕΣ ΓΙΑ ΜΕΝΑ, ΕΧΕΙΣ ΝΑ ΠΡΟΤΕΙΝΕΙΣ ΚΑΤΙ ΓΙΑ ΤΟ NETFLIX;",
+    "ΠΟΙΟΝ ΣΟΥ ΘΥΜΙΖΩ;",
+    "ΤΙ ΜΠΟΡΕΙΣ ΝΑ ΚΑΝΕΙΣ ΣΗΜΕΡΑ ΓΙΑ ΝΑ ΕΙΣΑΙ ΠΙΟ ΕΥΓΕΝΙΚΟΣ ΑΠΕΝΑΝΤΙ ΣΤΟΝ ΕΑΥΤΟ ΣΟΥ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΕΝΑ ΜΙΚΡΟ ΠΡΑΓΜΑ ΠΟΥ ΜΠΟΡΕΙΣ ΝΑ ΚΑΝΕΙΣ ΓΙΑ ΝΑ ΓΙΝΕΙΣ ΚΑΛΥΤΕΡΟΣ ΑΝΘΡΩΠΟΣ ΤΟ 2023;",
+    "ΤΙ ΜΠΟΡΟΥΜΕ ΝΑ ΔΗΜΙΟΥΡΓΗΣΟΥΜΕ ΜΑΖΙ;",
+    "ΠΩΣ ΘΑ ΜΕ ΠΕΡΙΕΓΡΑΦΕΣ ΣΕ ΕΝΑΝ ΞΕΝΟ;",
+    "ΤΙ ΣΕ ΕΞΕΠΛΗΞΕ ΠΕΡΙΣΣΟΤΕΡΟ ΣΕ ΜΕΝΑ;",
+    "ΠΟΙΟ ΘΑ ΗΤΑΝ ΤΟ ΤΕΛΕΙΟ ΔΩΡΟ ΓΙΑ ΜΕΝΑ;",
+    "ΤΙ ΘΑΥΜΑΖΕΙΣ ΠΕΡΙΣΣΟΤΕΡΟ ΣΕ ΜΕΝΑ;",
+    "ΜΕ ΒΑΣΗ ΑΥΤΑ ΠΟΥ ΕΜΑΘΕΣ ΓΙΑ ΜΕΝΑ, ΠΟΙΟ ΒΙΒΛΙΟ ΘΑ ΜΟΥ ΣΥΝΙΣΤΟΥΣΕΣ ΝΑ ΔΙΑΒΑΣΩ;",
+    "ΤΙ ΓΙΑ ΜΕΝΑ ΕΙΝΑΙ ΠΙΟ ΔΥΣΚΟΛΟ ΝΑ ΚΑΤΑΛΑΒΕΙΣ;",
+    "ΓΙΑ ΠΟΙΟ ΘΕΜΑ ΕΙΜΑΙ ΚΑΤΑΛΛΗΛΟΣ ΝΑ ΣΟΥ ΔΩΣΩ ΣΥΜΒΟΥΛΕΣ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΕΝΑ ΠΡΑΓΜΑ ΠΟΥ ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΜΠΟΡΩ ΝΑ ΚΑΝΩ ΚΑΙ ΘΑ ΒΕΛΤΙΩΝΕ ΔΡΑΜΑΤΙΚΑ ΤΗ ΖΩΗ ΜΟΥ;",
+    "ΑΝ ΗΜΑΣΤΑΝ ΣΕ ΣΥΓΚΡΟΤΗΜΑ, ΠΟΙΟ ΘΑ ΗΤΑΝ ΤΟ ΟΝΟΜΑ ΜΑΣ;",
+    "ΜΕ ΒΑΣΗ ΑΥΤΑ ΠΟΥ ΕΜΑΘΕΣ ΓΙΑ ΜΕΝΑ, ΤΑ ΜΕΣΑ ΚΟΙΝΩΝΙΚΗΣ ΔΙΚΤΥΩΣΗΣ ΠΟΥ ΔΙΑΘΕΤΩ ΑΝΤΙΚΑΤΟΠΤΡΙΖΟΥΝ ΜΕ ΑΚΡΙΒΕΙΑ ΤΟ ΠΟΙΟΣ ΕΙΜΑΙ; ΓΙΑΤΙ Η ΓΙΑΤΙ ΟΧΙ;",
+    "ΤΙ ΕΧΩ ΑΝΑΓΚΗ ΝΑ ΑΚΟΥΣΩ ΑΥΤΗ ΤΗ ΣΤΙΓΜΗ;",
+    "ΜΕ ΒΑΣΗ ΑΥΤΑ ΠΟΥ ΞΕΡΕΙΣ ΓΙΑ ΜΕΝΑ, ΕΧΕΙΣ ΚΑΠΟΙΑ ΠΡΟΤΑΣΗ ΓΙΑ ΤΟ NETFLIX;",
+    "ΠΟΙΑ ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΕΙΝΑΙ Η ΥΠΕΡΔΥΝΑΜΗ ΜΟΥ;",
+    "ΠΟΙΟ ΕΙΝΑΙ ΤΟ ΜΑΘΗΜΑ ΠΟΥ ΘΑ ΠΑΡΕΙΣ ΑΠΟ ΤΗ ΣΥΖΗΤΗΣΗ ΜΑΣ;",
+    "ΠΟΤΕ ΣΕ ΑΥΤΟ ΤΟ ΠΑΙΧΝΙΔΙ ΑΙΣΘΑΝΘΗΚΕΣ ΠΙΟ ΣΥΝΔΕΔΕΜΕΝΟΣ ΜΑΖΙ ΜΟΥ;",
+    "ΠΩΣ ΚΕΡΔΙΖΕΙ ΚΑΝΕΙΣ ΤΗΝ ΕΥΑΛΩΤΟΤΗΤΑ ΣΟΥ; ΤΗΝ ΚΕΡΔΙΣΑ; ΠΩΣ ΜΠΟΡΩ ΝΑ ΚΕΡΔΙΣΩ ΠΕΡΙΣΣΟΤΕΡΑ;",
+    "ΠΟΙΑ ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΕΙΝΑΙ Η ΠΙΟ ΣΗΜΑΝΤΙΚΗ ΜΑΣ ΟΜΟΙΟΤΗΤΑ;",
+    "ΠΟΙΑ ΑΠΑΝΤΗΣΗ ΜΟΥ ΣΕ ΕΚΑΝΕ ΝΑ ΖΩΝΤΑΝΕΨΕΙΣ ΞΑΦΝΙΚΑ ΑΠΟ ΧΑΡΑ;",
+    "ΟΤΑΝ ΤΕΛΕΙΩΣΕΙ ΑΥΤΟ ΤΟ ΠΑΙΧΝΙΔΙ, ΤΙ ΘΑ ΘΥΜΑΣΑΙ ΓΙΑ ΜΕΝΑ;",
+    "ΠΟΙΑ ΕΡΩΤΗΣΗ ΦΟΒΗΘΗΚΕΣ ΠΕΡΙΣΣΟΤΕΡΟ ΝΑ ΑΠΑΝΤΗΣΕΙΣ;",
+    "ΠΟΙΑ ΚΟΜΜΑΤΙΑ ΤΟΥ ΕΑΥΤΟΥ ΣΟΥ ΒΛΕΠΕΙΣ ΣΕ ΜΕΝΑ;",
+    "ΠΩΣ ΑΛΛΗΛΟΣΥΜΠΛΗΡΩΝΟΝΤΑΙ ΟΙ ΠΡΟΣΩΠΙΚΟΤΗΤΕΣ ΜΑΣ;",
+    "ΠΟΙΑ ΝΟΜΙΖΕΙΣ ΟΤΙ ΕΙΝΑΙ Η ΑΔΥΝΑΜΙΑ ΜΟΥ;",
+    "ΤΙ ΘΑ ΣΕ ΕΚΑΝΕ ΝΑ ΝΙΩΣΕΙΣ ΠΙΟ ΚΟΝΤΑ ΣΕ ΜΕΝΑ;",
+    "ΤΙ ΝΟΜΙΖΕΙΣ ΟΤΙ ΦΟΒΑΜΑΙ ΠΕΡΙΣΣΟΤΕΡΟ;",
+    "ΤΙ ΣΟΥ ΕΜΑΘΕ ΑΥΤΗ Η ΣΥΖΗΤΗΣΗ ΓΙΑ ΤΟΝ ΕΑΥΤΟ ΣΟΥ;",
+    "ΤΙ ΝΟΜΙΖΕΙΣ ΟΤΙ ΠΡΕΠΕΙ ΝΑ ΞΕΡΩ ΓΙΑ ΤΟΝ ΕΑΥΤΟ ΜΟΥ ΠΟΥ ΙΣΩΣ ΑΓΝΟΩ;",
+    "ΠΟΙΟ ΝΟΜΙΖΕΙΣ ΟΤΙ ΕΙΝΑΙ ΤΟ ΚΑΘΟΡΙΣΤΙΚΟ ΧΑΡΑΚΤΗΡΙΣΤΙΚΟ ΜΟΥ;",
+    "ΠΙΣΤΕΥΕΙΣ ΟΤΙ Ο ΚΑΘΕΝΑΣ ΕΧΕΙ ΕΝΑ ΚΑΛΕΣΜΑ; ΑΝ ΝΑΙ, ΠΙΣΤΕΥΕΙΣ ΟΤΙ ΕΧΩ ΒΡΕΙ ΤΟ ΔΙΚΟ ΜΟΥ;",
+    "ΤΙ ΠΡΟΤΕΙΝΕΙΣ ΝΑ ΑΦΗΣΩ ΠΙΣΩ ΜΟΥ, ΝΑ ΞΕΧΑΣΩ, ΑΝ ΥΠΑΡΧΕΙ ΚΑΤΙ;",
+    "ΜΕ ΜΙΑ ΛΕΞΗ, ΠΕΡΙΓΡΑΨΕ ΠΩΣ ΑΙΣΘΑΝΕΣΑΙ ΑΥΤΗ ΤΗ ΣΤΙΓΜΗ",
   ];
 
   let levels = {
@@ -191,19 +195,22 @@ function App() {
   const [cardHistory, setCardHistory] = React.useState([]);
 
   const buttons = Object.keys(levels).map((level) => (
-    <button
-      className={`level-button ${level === currLevel ? "selected-level" : ""}`}
+    <Button
+      sx={{ width: { xs: "231px", sm: "180px", md: "231px" } }}
+      variant={level === currLevel ? "outlined" : "contained"}
+      color="primary"
+      fontWeight="800"
       onClick={() => handleChangeLevel(level)}
       key={level}
     >
-      {level.split(/(?=[A-Z])/).join(" ")}
-    </button>
+      {transform(level)}
+    </Button>
   ));
 
   function handleChangeLevel(newLevel) {
     setLevel(newLevel);
     if (gameState[newLevel].length === 1) {
-      const finalMessage = "You have finished this level!";
+      const finalMessage = "ΤΕΛΟΣ ΕΠΙΠΕΔΟΥ!";
       setCurrCard(finalMessage);
     } else {
       setCurrCard(gameState[newLevel][0]);
@@ -211,7 +218,7 @@ function App() {
   }
 
   function handleNextCard() {
-    const finalMessage = "You have finished this level!";
+    const finalMessage = "ΤΕΛΟΣ ΕΠΙΠΕΔΟΥ!";
     if (gameState[currLevel].length === 1) {
       if (currCard === finalMessage) {
         return;
@@ -229,41 +236,87 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div className="credits">
-        <div className="credits-title">how & who</div>{" "}
-        <div className="cont">
-          <b>How to play:</b> <br />
-          Progress from level to level. Become more than strangers, one card at
-          a time.
-          <p>Refresh to reset card decks.</p>{" "}
-          <p>
-            Made by <a href="https://github.com/munjoonteo">@munjoonteo</a> and{" "}
-            <a href="https://github.com/ilyues">@ilyues</a>, inspired by the
-            need to virtually play{" "}
-            <a href="https://www.werenotreallystrangers.com/">WNRS</a>.
-          </p>
-        </div>
-      </div>
-      <div className="levels">{buttons}</div>
-      <div className="question">
-        <div className="title">we're not really strangers</div>
-        <Card styleName="big-card" question={currCard} />
-        <button className="next-card-button" onClick={() => handleNextCard()}>
-          next card
-        </button>
-      </div>
-      <div className="history">
-        <div className="history-title">previous cards</div>
-        <div className="card-container">
-          <div className="card-container-scroll">
-            {cardHistory.map((qn) => (
-              <Card styleName="small-card" question={qn} key={qn} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+    <Container maxWidth={false}>
+      <Typography
+        variant="h3"
+        color="#c10016"
+        textAlign="center"
+        marginTop="3vh"
+        marginBottom="3vh"
+        fontWeight="800"
+        textTransform="uppercase"
+      >
+        We're Not Really Strangers
+      </Typography>
+      <Stack
+        textAlign="center"
+        alignItems="center"
+        fontWeight="800"
+        direction={{ xs: "column", lg: "row" }}
+        spacing={{ xs: 2, sm: 4, md: 4, lg: 0 }}
+      >
+        <Stack
+          justifyContent="space-evenly"
+          alignItems="center"
+          padding="5px"
+          spacing={{ xs: 1, sm: 2, md: 4 }}
+          direction={{ xs: "column", sm: "row", lg: "column" }}
+          width={{ lg: "30vw" }}
+        >
+          {buttons}
+        </Stack>
+        <Box
+          alignItems="center"
+        >
+          <Card styleName="big-card" question={currCard} />
+          <Button
+            sx={{ width: "231px" }}
+            variant="contained"
+            color="primary"
+            fontWeight="800"
+            onClick={() => handleNextCard()}>
+            ΕΠΟΜΕΝΗ ΚΑΡΤΑ
+          </Button>
+        </Box>
+        <Stack
+          padding="5px"
+          width={{ xs: "70vw", lg: "30vw" }}
+        >
+          <Typography
+            variant="h6"
+            color="#c10016"
+            fontWeight="800"
+          >
+            ΠΡΟΗΓΟΥΜΕΝΕΣ ΚΑΡΤΕΣ
+          </Typography>
+          <Container
+          sx={{
+            height: "75vh",
+            padding: "0px !important",
+            margin: "10px",
+            borderRadius: "15px",
+            border: "solid 2px #c10016"
+          }}
+          >
+            <Container
+              sx={{
+                width: "98%",
+                height: "95%",
+                overflowY: "scroll",
+                overflowX: "hidden",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              {cardHistory.map((qn) => (
+                <Card styleName="small-card" question={qn} key={qn} />
+              ))}
+            </Container>
+          </Container>
+        </Stack>
+      </Stack>
+    </Container>
   );
 }
 
@@ -285,6 +338,19 @@ function shuffle(array) {
   }
 
   return array;
+}
+
+function transform(level) {
+  switch(level) {
+    case "levelOne":
+      return "ΕΠΙΠΕΔΟ 1"
+    case "levelTwo":
+      return "ΕΠΙΠΕΔΟ 2"
+    case "levelThree":
+      return "ΕΠΙΠΕΔΟ 3"
+    default:
+      return "ERROR"
+  }
 }
 
 export default App;
