@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wnrs/static/css/main.e846a80e.css",
+    "main.js": "/wnrs/static/js/main.c0a066b8.js",
+    "index.html": "/wnrs/index.html",
+    "main.e846a80e.css.map": "/wnrs/static/css/main.e846a80e.css.map",
+    "main.c0a066b8.js.map": "/wnrs/static/js/main.c0a066b8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e846a80e.css",
+    "static/js/main.c0a066b8.js"
+  ]
+}
