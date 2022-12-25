@@ -282,6 +282,7 @@ function App() {
           padding="5px"
           width={{ xs: "70vw", lg: "30vw" }}
           justifyContent="center"
+          alignItems="center"
         >
           <Typography
             variant="h6"
