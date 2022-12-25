@@ -281,6 +281,7 @@ function App() {
         <Stack
           padding="5px"
           width={{ xs: "70vw", lg: "30vw" }}
+          justifyContent="center"
         >
           <Typography
             variant="h6"
